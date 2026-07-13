@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI 短视频文案 - 一键生成口播稿",
+  "version": "1.0.0",
+  "description": "浏览任意网页，一键生成抖音/小红书风格短视频口播稿。AI写作+配音，自媒体人必备神器。",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://api.aiclipes.xyz/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI 短视频文案",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

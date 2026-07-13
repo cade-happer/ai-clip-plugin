@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Video Script - Settings / AI 短视频文案 - 设置</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 24px;
+    }
+    h1 { font-size: 22px; margin-bottom: 24px; }
+    .card {
+      padding: 20px;
+      border-radius: 12px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      margin-bottom: 16px;
+    }
+    .card h2 { font-size: 16px; margin-bottom: 12px; }
+    .card p { font-size: 14px; color: #8b949e; line-height: 1.6; }
+    .en { font-size: 12px; color: #6b8ba4; }
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    .stat-label { color: #e6edf3; }
+    .stat-label .en { display: block; }
+    .stat-value {
+      font-weight: 700;
+      color: #e6b84c;
+      text-align: right;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #e6b84c, #d4a843);
+      color: #0d1117;
+    }
+    .input-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .input-group input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      color: #e6edf3;
+      font-size: 14px;
+    }
+    .input-group input:focus {
+      border-color: #e6b84c;
+      outline: none;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge-free { background: rgba(107,139,164,0.2); color: #6b8ba4; }
+    .badge-pro { background: rgba(230,184,76,0.2); color: #e6b84c; }
+    .info-text { font-size: 12px; color: #8b949e; margin-top: 6px; }
+    .qr-code {
+      width: 100%;
+      max-width: 180px;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 AI Video Script<br><span class="en">AI 短视频文案</span></h1>
+
+  <div class="card">
+    <h2>Current Plan <span class="badge badge-free" id="planBadge">Free</span><br><span class="en">当前套餐</span></h2>
+    <div class="stat">
+      <span class="stat-label">Used Today <span class="en">今日已用</span></span>
+      <span class="stat-value" id="usedCount">-</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Daily Limit <span class="en">每日限额</span></span>
+      <span class="stat-value" id="limitCount">3 / day</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">User ID <span class="en">用户 ID</span></span>
+      <span class="stat-value" id="userIdDisplay" style="font-size:11px">-</span>
+    </div>
+  </div>
+
+  <div class="card" id="freeCard">
+    <h2>Upgrade to Pro · 💰 ¥19.9/month<br><span class="en">升级 Pro · 19.9 元/月</span></h2>
+    <p>Unlimited generation + voiceover download. Two payment options:<br><span class="en">无限生成 + 配音下载，两种付款方式任选：</span></p>
+  </div>
+
+  <div class="card" id="freeCardPaypal">
+    <h2>🌍 PayPal <span class="en">(International)</span><br><span class="en">PayPal · 国际用户</span></h2>
+    <p>≈ $3 USD — Click to pay:<br><span class="en">≈ $3 USD，点击链接付款：</span><br>
+      <a href="https://paypal.me/aiclip/3" target="_blank" style="color:#e6b84c;font-weight:700">paypal.me/aiclip</a>
+    </p>
+  </div>
+
+  <div class="card" id="freeCardCN">
+    <h2>🇨🇳 WeChat / Alipay <span class="en">(China)</span><br><span class="en">微信 / 支付宝 · 国内用户</span></h2>
+    <p style="font-size:13px;color:#8b949e">Scan to pay ¥19.9, then send your <b>User ID</b> to support for activation.<br><span class="en">扫码付款 ¥19.9，付款后将<b>用户 ID</b>发给客服激活</span></p>
+    <div style="display:flex;gap:16px;margin-top:14px;text-align:center">
+      <div style="flex:1">
+        <img src="wechat-pay.jpg" alt="WeChat Pay QR" class="qr-code">
+        <p style="font-size:12px;color:#8b949e;margin-top:6px">WeChat Pay<br><span class="en">微信扫码</span></p>
+      </div>
+      <div style="flex:1">
+        <img src="alipay.jpg" alt="Alipay QR" class="qr-code">
+        <p style="font-size:12px;color:#8b949e;margin-top:6px">Alipay<br><span class="en">支付宝扫码</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔑 Activate Pro<br><span class="en">激活 Pro</span></h2>
+    <p style="font-size:13px;color:#8b949e">After payment, send your <b>User ID</b> to support, or enter activation code:<br><span class="en">付款后把<b>用户 ID</b>发给客服，或输入激活码：</span></p>
+    <div class="input-group">
+      <input type="text" id="activateCode" placeholder="Activation code / 激活码">
+      <button class="btn btn-primary" id="btnActivate">Activate<br><span style="font-size:11px">激活</span></button>
+    </div>
+    <div class="info-text" id="activateMsg"></div>
+  </div>
+
+  <div class="card" id="proCard" style="display:none">
+    <h2>✅ Pro Member<br><span class="en">已是 Pro 会员</span></h2>
+    <p>Unlimited generation, all features unlocked. Thank you!<br><span class="en">无限生成，畅享全部功能。感谢支持！</span></p>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

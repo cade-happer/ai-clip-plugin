@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <div class="header">
+      <span class="logo">🎬</span>
+      <h1>AI 短视频文案</h1>
+    </div>
+
+    <!-- 风格选择 -->
+    <div class="style-picker">
+      <label>口播风格</label>
+      <select id="styleSelect">
+        <option value="douyin">抖音快节奏</option>
+        <option value="xiaohongshu">小红书文案</option>
+      </select>
+    </div>
+
+    <!-- 声音选择 -->
+    <div class="style-picker">
+      <label>配音声音</label>
+      <select id="voiceSelect">
+        <option value="news">🎙️ 新闻男 · 专业播音腔</option>
+        <option value="casual">💬 聊天男 · 自然聊天感</option>
+        <option value="gentle">🌸 温柔女 · 温暖自然</option>
+      </select>
+    </div>
+
+    <!-- 页面信息 -->
+    <div class="page-info" id="pageInfo">
+      <span class="label">当前页面：</span>
+      <span id="pageTitle">-</span>
+      <span class="word-count" id="wordCount"></span>
+    </div>
+
+    <!-- 生成按钮 -->
+    <button class="btn-generate" id="btnGenerate">⚡ 生成文案</button>
+
+    <!-- 加载状态 -->
+    <div class="loading" id="loading" style="display:none">
+      <div class="spinner"></div>
+      <span>AI 正在写稿...</span>
+    </div>
+
+    <!-- 错误信息 -->
+    <div class="error" id="error" style="display:none"></div>
+
+    <!-- 结果区 -->
+    <div class="result" id="result" style="display:none">
+      <div class="result-header">
+        <span>📝 口播稿</span>
+        <span class="duration" id="duration"></span>
+      </div>
+      <div class="script-text" id="scriptText"></div>
+      <div class="titles" id="titles"></div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="actions" id="actions" style="display:none">
+      <button class="btn-copy" id="btnCopy">📋 复制文案</button>
+      <button class="btn-tts" id="btnTTS">🔊 配音下载</button>
+    </div>
+
+    <!-- 底栏 -->
+    <div class="footer">
+      <span id="usageInfo">今日剩余：-/-</span>
+      <a href="options.html" target="_blank" class="upgrade-link">升级 Pro</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
