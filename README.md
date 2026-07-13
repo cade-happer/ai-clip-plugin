@@ -38,4 +38,7 @@ python server.py
 
 ## 📸 截图
 
-（待添加）
+<img width="382" height="522" alt="image" src="https://github.com/user-attachments/assets/dba37f2c-8de4-4311-9995-e8fb236a3fa6" />
+<img width="459" height="751" alt="image" src="https://github.com/user-attachments/assets/1d022cd1-cc92-467d-81d0-93d1d8f36f41" />
+
+
